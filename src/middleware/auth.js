@@ -3,19 +3,20 @@ import jwt from "jsonwebtoken";
 import { User } from "../models/index.js";
 dotenv.config();
 
-export const checkAuthetication = (req, res, next) => {
+export const checkAuthentication = (req, res, next) => {
   const token = req.headers["authorization"]?.split(" ")[1];
-  if (!token)
+  if (!token) {
     return res.status(403).json({
       detail: "Token is required",
     });
-
+  }
   jwt.verify(token, process.env.JWT_SECRET, async (err, payload) => {
-    if (err)
+    if (err) {
       return res.status(401).json({
         detail: "Invalid or expired token",
       });
-    const user = await User.findById(payload.id);
+    }
+    const user = await User.findByPk(payload.id);
     req.user = user;
     next();
   });

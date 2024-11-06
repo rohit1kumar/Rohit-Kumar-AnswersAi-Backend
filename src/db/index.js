@@ -3,7 +3,7 @@ import { Sequelize } from "sequelize";
 dotenv.config();
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  logging: console.log,
+  logging: process.env.NODE_ENV === "development" ? console.log : false,
 });
 
 export default sequelize;

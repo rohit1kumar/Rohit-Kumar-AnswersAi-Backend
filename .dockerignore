@@ -1,0 +1,8 @@
+.git/
+.vscode/
+node_modules/
+.gitignore
+eslint.config.js
+README.md
+.env
+.env.example

@@ -19,5 +19,10 @@ const loginSchema = Joi.object({
   password: Joi.string().min(6).required(),
 });
 
-export const validateUser = validateRequest(userSchema);
-export const validateLogin = validateRequest(loginSchema);
+const questionSchema = Joi.object({
+  content: Joi.string().required(),
+});
+
+export const validateUserSchema = validateRequest(userSchema);
+export const validateLoginSchema = validateRequest(loginSchema);
+export const validateQuestionSchema = validateRequest(questionSchema);

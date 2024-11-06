@@ -1,5 +1,9 @@
 import express from "express";
-import { getUserById, addUser, getQuestionsByUser } from "../controllers/user.js";
+import {
+  getUserById,
+  addUser,
+  getQuestionsByUser,
+} from "../controllers/user.js";
 import { checkAuthentication } from "../middleware/auth.js";
 import { validateUserSchema } from "../middleware/validator.js";
 

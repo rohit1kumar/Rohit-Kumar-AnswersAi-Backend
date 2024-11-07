@@ -17,6 +17,12 @@ export const checkAuthentication = (req, res, next) => {
       });
     }
     const user = await User.findByPk(payload.id);
+    if (!user) {
+      console.log("No user found with token");
+      return res.status(404).json({
+        detail: "Corrupt token, get a new one",
+      });
+    }
     req.user = user;
     next();
   });

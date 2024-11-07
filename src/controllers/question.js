@@ -1,5 +1,6 @@
 import { Question } from "../models/index.js";
 import AI from "../utils/ai.js";
+
 export const addQuestion = async (req, res, next) => {
   try {
     const { content } = req.body;

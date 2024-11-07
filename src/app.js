@@ -1,11 +1,12 @@
 import express from "express";
+import morgan from "morgan"
 import authRoute from "./routes/auth.js";
 import userRoute from "./routes/user.js";
 import questionRoute from "./routes/question.js";
 const app = express();
 
 app.use(express.json());
-
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'))
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/questions", questionRoute);

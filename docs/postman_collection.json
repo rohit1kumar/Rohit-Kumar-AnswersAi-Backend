@@ -1,0 +1,692 @@
+{
+	"info": {
+		"_postman_id": "31c01729-57ba-4d17-bff5-9d938eda0e7d",
+		"name": "AnswerAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20980024",
+		"_collection_link": "https://red-moon-757791.postman.co/workspace/Public-Workspace~1c687d97-092e-4c07-b900-d7384e10b729/collection/20980024-31c01729-57ba-4d17-bff5-9d938eda0e7d?action=share&source=collection_link&creator=20980024"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "get a user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/1eeae1df-f393-4fb9-8f9e-ebfff4792bc3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "no auth token",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/users/1eeae1df-f393-4fb9-8f9e-ebfff4792bc3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-eIM11sNWXjDaxIIACP9X5RdlsI8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Nov 2024 18:38:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Token is required\"\n}"
+						},
+						{
+							"name": "get a user by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/users/1eeae1df-f393-4fb9-8f9e-ebfff4792bc3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a3-HTBk8uqcu6hb5WVkrK5bcZQWRF4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Nov 2024 18:42:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3\",\n    \"name\": \"rohit\",\n    \"email\": \"rohi@rohit.com\",\n    \"createdAt\": \"2024-11-06T18:38:29.469Z\",\n    \"updatedAt\": \"2024-11-06T18:38:29.469Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add user (register)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"rohit\",\r\n    \"email\": \"rohi@rohit.com\",\r\n    \"password\":\"test@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"rohit\",\r\n    \"email\": \"rohi@rohit.com\",\r\n    \"password\":\"test@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "243"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f3-lHMS7VzXrpIonK6/hL9g0kAVm/M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Nov 2024 17:35:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"9aba7052-0f7b-4098-a18c-b361053eb53b\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlhYmE3MDUyLTBmN2ItNDA5OC1hMThjLWIzNjEwNTNlYjUzYiIsImlhdCI6MTczMDkxNDUwMSwiZXhwIjoxNzMxNzc4NTAxfQ.7JyEkEfZYJylNU5xS9ueDSYGm4jDBifLNrcUi7td-CE\"\n}"
+						},
+						{
+							"name": "data invalid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"rohit\",\r\n    \"email\": \"rohi@rohit\",\r\n    \"password\":\"test@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "269"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10d-SLFlHAF7DqWuuf9z08w2RMWVaew\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Nov 2024 17:35:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"_original\": {\n            \"name\": \"rohit\",\n            \"email\": \"rohi@rohit\",\n            \"password\": \"test@123\"\n        },\n        \"details\": [\n            {\n                \"message\": \"\\\"email\\\" must be a valid email\",\n                \"path\": [\n                    \"email\"\n                ],\n                \"type\": \"string.email\",\n                \"context\": {\n                    \"value\": \"rohi@rohit\",\n                    \"invalids\": [\n                        \"rohi@rohit\"\n                    ],\n                    \"label\": \"email\",\n                    \"key\": \"email\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get user questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/users/1eeae1df-f393-4fb9-8f9e-ebfff4792bc3/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3",
+								"questions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get user questions",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/users/1eeae1df-f393-4fb9-8f9e-ebfff4792bc3/questions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3",
+										"questions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "445"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bd-Yubhz+uBbVrDWIbtFAwTBu3NuvM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Nov 2024 19:02:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"6891f005-8715-44e3-a450-b4720a82fa91\",\n        \"user_id\": \"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3\",\n        \"content\": \"what is my name\",\n        \"answer\": \"ai answer\",\n        \"createdAt\": \"2024-11-06T18:59:06.665Z\",\n        \"updatedAt\": \"2024-11-06T18:59:06.695Z\"\n    },\n    {\n        \"id\": \"3c5f08bd-3323-4b84-a238-ca027264335f\",\n        \"user_id\": \"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3\",\n        \"content\": \"what is my name\",\n        \"answer\": \"ai answer\",\n        \"createdAt\": \"2024-11-06T18:59:40.030Z\",\n        \"updatedAt\": \"2024-11-06T18:59:40.039Z\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rohi@rohit.com\",\r\n    \"password\":\"test@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"rohi@rohit.com\",\r\n    \"password\":\"test@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c7-lZYbDxuYUnvIrehsj5Eq8ouml84\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Nov 2024 17:40:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlhYmE3MDUyLTBmN2ItNDA5OC1hMThjLWIzNjEwNTNlYjUzYiIsImlhdCI6MTczMDkxNDgyNCwiZXhwIjoxNzMxNzc4ODI0fQ.OWqLQxknKqNkNGHXfxb6xVxXfgbdbqTBTdgbeAH1F64\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "add question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"what is my name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "add question",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"who is donald trump?\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/questions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"questions"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "277"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"115-KcUY7JrqFMtyWujyz95LLhBhGfk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Nov 2024 19:50:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"887bd0ad-2d44-4062-ae83-516eba83437b\",\n    \"content\": \"who is donald trump?\",\n    \"user_id\": \"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3\",\n    \"updatedAt\": \"2024-11-06T19:50:41.740Z\",\n    \"createdAt\": \"2024-11-06T19:50:40.322Z\",\n    \"answer\": \"\\n\\nDonald Trump is the 45th President of the United States.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get all question by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/questions/a66daafe-5093-4275-b7ff-15e7217c4fe5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"questions",
+								"a66daafe-5093-4275-b7ff-15e7217c4fe5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get all question by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/questions/a66daafe-5093-4275-b7ff-15e7217c4fe5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"questions",
+										"a66daafe-5093-4275-b7ff-15e7217c4fe5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "272"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"110-po8x9aOkmCZUW830CRX6rCeUvZM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 06 Nov 2024 19:51:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"a66daafe-5093-4275-b7ff-15e7217c4fe5\",\n    \"user_id\": \"1eeae1df-f393-4fb9-8f9e-ebfff4792bc3\",\n    \"content\": \"what is openai\",\n    \"answer\": \"\\n\\nOpenAI is an artificial intelligence research laboratory.\",\n    \"createdAt\": \"2024-11-06T19:51:17.170Z\",\n    \"updatedAt\": \"2024-11-06T19:51:18.482Z\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFlZWFlMWRmLWYzOTMtNGZiOS04ZjllLWViZmZmNDc5MmJjMyIsImlhdCI6MTczMDkxODMwOSwiZXhwIjoxNzMxNzgyMzA5fQ.x8hEMrrrYlptCmIzS0GPkNE1zfIszJ069rBW9fupuGY",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
